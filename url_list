@@ -1,0 +1,54 @@
+# url_list
+# by Tichod <https://github.com/Tichod>
+# Created:    <13/12/2012 11:14:51 Tichod>
+# Last modif: <31/01/2021 19:39:49 Tichod>
+
+# ================== Licence                   BEGIN ==================
+           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                   Version 2, December 2004
+ 
+Copyright (C) 2021 Tichod <https://github.com/Tichod>
+
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+ 
+           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+ 0. You just DO WHAT THE FUCK YOU WANT TO.
+# ================== Licence                    END   ==================
+
+# Configuration file
+# Used by: ~/bin/WebPageMonitor.sh launched via crontab
+
+# Description : WebPageMonitor.sh checks if web pages have been modified and sends a notification by email if so
+
+# File format:
+# National Cybersecurity Center of Excellence - News;https://www.nccoe.nist.gov/news;NCCOE-News;theme_token\|form_build_id\|view-dom-id\|views-field
+# \__________________________________________/ \___________________________________/ \________/ \__________________________________________________/
+#                      \                                          \                       \                 \
+#                       \                                          \                       \                 \-> cf. [1] hereunder
+#                        \                                          \                       \-> storage directory (under ${RootDir})
+#                         \                                          \
+#                          \                                          \-> webpage URL
+#                           \-> title (present in subject of the notification email
+# Notes :
+# [1] Some pages contain frequently changing code, which does not affect the visible content of the page.
+#     In order to disregard such changes, lines containing these character strings are excluded from the comparison.
+#
+#     /!\ chain separator =  << \| >>
+
+ANSSI - Homepage;https://www.ssi.gouv.fr/;ANSSI-Home_Page;
+CERT-SSI-FR;https://www.cert.ssi.gouv.fr/;CERT-SSI-FR;
+Have I been pwned;https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches;HIBP;
+National Cybersecurity Center of Excellence - News;https://www.nccoe.nist.gov/news;NCCOE-News;theme_token\|form_build_id\|view-dom-id\|views-field
+NCSC - News;https://www.ncsc.gov.uk/section/keep-up-to-date/ncsc-news;NCSC-News;
+NIST Computer Security Resource Center;https://csrc.nist.gov/news;NIST-CSRC-News;TeX-AMS_HTML
+SANS PGP keys;https://isc.sans.edu/PGPKEYS.txt;SANS-PGP-Keys;
+
+#### Local Variables: ####
+#### time-stamp-start:"Last modif: <" ####
+#### time-stamp-end:">" ####
+#### time-stamp-format:"%02d/%02m/%04y %02H:%02M:%02S Tichod" ####
+#### End: ####
