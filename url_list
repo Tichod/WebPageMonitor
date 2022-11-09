@@ -1,7 +1,7 @@
 # url_list
 # by Tichod <https://github.com/Tichod>
 # Created:    <13/12/2012 11:14:51 Tichod>
-# Last modif: <31/01/2021 19:39:49 Tichod>
+# Last modif: <09/11/2022 17:11:20 Tichod>
 
 # ================== Licence                   BEGIN ==================
            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
@@ -25,27 +25,29 @@ as the name is changed.
 # Description : WebPageMonitor.sh checks if web pages have been modified and sends a notification by email if so
 
 # File format:
-# National Cybersecurity Center of Excellence - News;https://www.nccoe.nist.gov/news;NCCOE-News;theme_token\|form_build_id\|view-dom-id\|views-field
-# \__________________________________________/ \___________________________________/ \________/ \__________________________________________________/
-#                      \                                          \                       \                 \
-#                       \                                          \                       \                 \-> cf. [1] hereunder
-#                        \                                          \                       \-> storage directory (under ${RootDir})
-#                         \                                          \
-#                          \                                          \-> webpage URL
-#                           \-> title (present in subject of the notification email
+# National Cybersecurity Center of Excellence - News;https://www.nccoe.nist.gov/news;NCCOE-News;xxx.xxxx@example.org;theme_token\|form_build_id\|view-dom-id\|views-field
+# \________________________________________________/ \_____________________________/ \________/ \__________________/ \____________________________________________________/
+#                     \                                           \                       \               \                              \
+#                      \                                           \                       \               \                              \-> cf. [1] hereunder
+#                       \                                           \                       \               \-> recipient email address
+#                        \                                           \                       \-> storage directory (under ${RootDir})
+#                         \                                           \-> site URl
+#                          \-> title (present in subject of the notification email)
 # Notes :
 # [1] Some pages contain frequently changing code, which does not affect the visible content of the page.
 #     In order to disregard such changes, lines containing these character strings are excluded from the comparison.
 #
 #     /!\ chain separator =  << \| >>
+#     /!\ no space in character strings
+#     /!\ test before go-live
 
-ANSSI - Homepage;https://www.ssi.gouv.fr/;ANSSI-Home_Page;
-CERT-SSI-FR;https://www.cert.ssi.gouv.fr/;CERT-SSI-FR;
-Have I been pwned;https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches;HIBP;
-National Cybersecurity Center of Excellence - News;https://www.nccoe.nist.gov/news;NCCOE-News;theme_token\|form_build_id\|view-dom-id\|views-field
-NCSC - News;https://www.ncsc.gov.uk/section/keep-up-to-date/ncsc-news;NCSC-News;
-NIST Computer Security Resource Center;https://csrc.nist.gov/news;NIST-CSRC-News;TeX-AMS_HTML
-SANS PGP keys;https://isc.sans.edu/PGPKEYS.txt;SANS-PGP-Keys;
+ANSSI - Homepage;https://www.ssi.gouv.fr/;ANSSI-Home_Page;xxx.xxxx@example.org;
+CERT-SSI-FR;https://www.cert.ssi.gouv.fr/;CERT-SSI-FR;xxx.xxxx@example.org;
+Have I been pwned;https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches;HIBP;xxx.xxxx@example.org;
+National Cybersecurity Center of Excellence - News;https://www.nccoe.nist.gov/news;NCCOE-News;xxx.xxxx@example.org;theme_token\|form_build_id\|view-dom-id\|views-field
+NCSC - News;https://www.ncsc.gov.uk/section/keep-up-to-date/ncsc-news;NCSC-News;xxx.xxxx@example.org;
+NIST Computer Security Resource Center;https://csrc.nist.gov/news;NIST-CSRC-News;xxx.xxxx@example.org;TeX-AMS_HTML
+SANS PGP keys;https://isc.sans.edu/PGPKEYS.txt;SANS-PGP-Keys;xxx.xxxx@example.org;
 
 #### Local Variables: ####
 #### time-stamp-start:"Last modif: <" ####
